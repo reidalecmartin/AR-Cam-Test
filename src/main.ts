@@ -18,7 +18,7 @@ async function init() {
   const cameraKit = await bootstrapCameraKit({ apiToken: 'eyJhbGciOiJIUzI1NiIsImtpZCI6IkNhbnZhc1MyU0hNQUNQcm9kIiwidHlwIjoiSldUIn0.eyJhdWQiOiJjYW52YXMtY2FudmFzYXBpIiwiaXNzIjoiY2FudmFzLXMyc3Rva2VuIiwibmJmIjoxNzEyMDg1NjYyLCJzdWIiOiIyOTU4YTFjZi0xY2Q3LTQzNGYtYmRiNC03N2YzMzRmNjlhM2N-U1RBR0lOR34zMTZjYmNlOC04MTQ0LTRhNWQtOGIzNy0xZTU2YjI2MGFhOWQifQ.3Kn9xhjcNO0qrlsuRdadOsRz_LF_QJSlOP6eTc5D8d8' });
   const session = await cameraKit.createSession({ liveRenderTarget });
   const { lenses } = await cameraKit.lensRepository.loadLensGroups([
-    '3af90634-0f51-4623-af3a-d7b8fef324bf',
+    '6c8d0e20-ef01-4583-be7b-228892e708fa',
   ]);
 
   session.applyLens(lenses[0]);
@@ -69,6 +69,8 @@ async function setCameraKitSource(
   source.setTransform(Transform2D.MirrorX);
 
   session.play();
+
+  //source.setRenderSize(1080, 1920);
 }
 
 async function attachCamerasToSelect(session: CameraKitSession) {
